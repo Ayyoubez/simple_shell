@@ -79,7 +79,7 @@ void prompt(char **av, char **en)
 		handleinput(str, argv);
 		if (!argv[0])
 			continue;
-		builtin(argv[0]);
+		builtin(argv);
 		argv[0] = handlepath(_getenv("PATH"), argv[0]);
 		if (argv[0] == NULL)
 		{
