@@ -51,6 +51,8 @@ void runprogram(char **argv, char **en)
 	else
 	{
 		wait(NULL);
+		if (argv[0])
+			free(argv[0]);
 	}
 }
 /**
@@ -88,5 +90,7 @@ void prompt(char **av, char **en)
 			continue;
 		}
 		runprogram(argv, en);
+		free(str);
+		str = NULL;
 	}
 }
