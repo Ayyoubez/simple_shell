@@ -74,7 +74,7 @@ void prompt(char **av, char **en)
 		if (n_char == -1)
 		{
 			free(str);
-			exit(EXIT_FAILURE);
+			exit(0);
 		}
 		handleinput(str, argv);
 		if (!argv[0])
