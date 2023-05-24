@@ -84,7 +84,7 @@ void prompt(char **av, char **en)
 		if (argv[0] == NULL)
 		{
 			write(1, av[0], _strlen(av[0]));
-			write(1, ":No such file or directory\n", 28);
+			write(1, ": No such file or directory\n", 28);
 			continue;
 		}
 		runprogram(argv, en);
