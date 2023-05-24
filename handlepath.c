@@ -26,7 +26,6 @@ char *_strjoin(char *s1, char *s2)
 		j++;
 	}
 	s0[i + j + 1] = '\0';
-
 	return (s0);
 }
 /**
