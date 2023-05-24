@@ -90,5 +90,6 @@ void prompt(char **av, char **en)
 		runprogram(argv, en);
 		free(str);
 		str = NULL;
+
 	}
 }
