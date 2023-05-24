@@ -12,8 +12,15 @@
 #include <fcntl.h>
 #include <errno.h>
 
+#define NUM_CMD 10
 
+extern char **environ;
 
+void  prompt(char **av, char **en);
+char *handlepath(char *path, char *cmd);
+int _strcmp(const char *s1, const char *s2);
+char *_getenv(const char *name);
+char *_strdup(char *str);
 
 
 
