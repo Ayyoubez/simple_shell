@@ -8,6 +8,7 @@
 void handleinput(char *str, char *argv[])
 {
 	int i = 0, j = 0;
+	char *token;
 
 	while (str[i])
 	{
@@ -17,12 +18,14 @@ void handleinput(char *str, char *argv[])
 	}
 	if (str == NULL)
 		return;
-	argv[j] = strtok(str, " ");
-	while (argv[j] != NULL)
+	token = strtok(str, " ");
+	while (token != NULL)
 	{
+		argv[j] = token;
 		j++;
-		argv[j] = strtok(NULL, " ");
+		token = strtok(NULL, " ");
 	}
+	argv[j] = NULL;
 }
 /**
 *runprogram - running commands
@@ -46,7 +49,9 @@ void runprogram(char **argv, char **en)
 			perror("Erroe during execution..");
 	}
 	else
+	{
 		wait(NULL);
+	}
 }
 /**
 *prompt - prompt in terminal

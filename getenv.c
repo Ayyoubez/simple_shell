@@ -20,8 +20,11 @@ char *_getenv(const char *name)
 		if (_strcmp(s, name) == 0)
 		{
 			s = strtok(NULL, "=");
+			s = _strdup(s);
+			free(cpy);
 			return (s);
 		}
+		free(cpy);
 		i++;
 	}
 	return (NULL);

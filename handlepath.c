@@ -46,18 +46,23 @@ char *handlepath(char *path, char *cmd)
 
 	if (cmd[0] == '/')
 	{
+		free(path);
 		if (access(cmd, X_OK) == 0)
 			return (cmd);
 		return (NULL);
 	}
 
 	p = _strdup(path);
+	free(path);
 	dir = strtok(p, ":");
 	while (dir != NULL)
 	{
 		apath = _strjoin(dir, cmd);
 		if (access(apath, X_OK) == 0)
+		{
+			free(p);
 			return (apath);
+		}
 		free(apath);
 		dir = strtok(NULL, ":");
 	}
