@@ -38,7 +38,7 @@ void runprogram(char **argv, char **en)
 	if (child == -1)
 	{
 		free(argv[0]);
-		exir(EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 	if (child == 0)
 	{
@@ -75,10 +75,10 @@ void prompt(char **av, char **en)
 		if (!argv[0])
 			continue;
 		builtin(argv[0]);
-		argv[0] = handlepath(_getenv("PATH"), ARGV[0]);
+		argv[0] = handlepath(_getenv("PATH"), argv[0]);
 		if (argv[0] == NULL)
 		{
-			wrie(1, av[0], _strlen(av[0]));
+			write(1, av[0], _strlen(av[0]));
 			write(1, ":No such file or directory\n", 28);
 			continue;
 		}

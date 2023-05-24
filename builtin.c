@@ -15,7 +15,7 @@ void builtin(char *cmd)
 		while (environ[i])
 		{
 			write(1, environ[i], _strlen(environ[i]));
-			write(1, "\n", 1);
+				write(1, "\n", 1);
 			i++;
 		}
 	}

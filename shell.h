@@ -16,6 +16,7 @@
 
 extern char **environ;
 
+int _strlen(char *s)
 void  prompt(char **av, char **en);
 char *handlepath(char *path, char *cmd);
 int _strcmp(const char *s1, const char *s2);
