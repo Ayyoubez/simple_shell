@@ -17,7 +17,7 @@ void handleinput(char *str, char *argv[])
 	}
 	if (str == NULL)
 		return;
-	argv[j] = strtok(str, "");
+	argv[j] = strtok(str, " ");
 	while (argv[j] != NULL)
 	{
 		j++;
@@ -64,7 +64,7 @@ void prompt(char **av, char **en)
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
-			write(1, "Cisfun$", 8);
+			write(1, "Cisfun$ ", 8);
 		n_char = getline(&str, &n, stdin);
 		if (n_char == -1)
 		{
@@ -83,6 +83,5 @@ void prompt(char **av, char **en)
 			continue;
 		}
 		runprogram(argv, en);
-		free(str);
 	}
 }
