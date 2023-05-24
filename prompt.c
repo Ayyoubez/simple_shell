@@ -51,6 +51,7 @@ void runprogram(char **argv, char **en)
 	else
 	{
 		wait(NULL);
+		free(argv[0]);
 	}
 }
 /**

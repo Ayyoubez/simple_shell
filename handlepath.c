@@ -45,9 +45,10 @@ char *handlepath(char *path, char *cmd)
 
 	if (cmd[0] == '/')
 	{
+		apath = _strdup(cmd);
 		free(path);
 		if (access(cmd, X_OK) == 0)
-			return (cmd);
+			return (apath);
 		return (NULL);
 	}
 
