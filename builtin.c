@@ -16,17 +16,18 @@ void freecmd(char **cmd)
 }
 /**
 *builtin - built in function
-*@cmd: command
+*@cmd: commandi
+*Return: 1 or 0
 */
 
-void builtin(char **cmd)
+int builtin(char **cmd)
 {
 	int i = 0;
 
 	if (_strcmp(cmd[0], "exit") == 0)
 	{
 		freecmd(cmd);
-		_exit(1);
+		_exit(0);
 	}
 	if (_strcmp(cmd[0], "env") == 0)
 	{
@@ -36,5 +37,7 @@ void builtin(char **cmd)
 			write(1, "\n", 1);
 			i++;
 		}
+		return (0);
 	}
+	return (1);
 }

@@ -15,7 +15,7 @@
 #define NUM_CMD 10
 
 extern char **environ;
-void builtin(char **cmd);
+int builtin(char **cmd);
 int _strlen(char *s);
 void  prompt(char **av, char **en);
 char *handlepath(char *path, char *cmd);
